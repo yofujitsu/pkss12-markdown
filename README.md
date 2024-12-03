@@ -46,11 +46,11 @@ journey
 ## Приоритеты функционала
 ```mermaid
 graph TD
-    A[Prioritization of Features] -->|High Value| B[Authorization]
-    A -->|High Value| C[Player Statistics]
-    A -->|Low Value| D[Item Statistics]
-    A -->|High Effort| E[Steam API Integration]
-    A -->|Low Effort| F[Interface Improvements]
+    A[Приоритеты функционала] -->|Высокая ценность| B[Авторизация]
+    A -->|Высокая ценность| C[Статистика игроков]
+    A -->|Низкая ценность| D[Статистика предметов]
+    A -->|Высокие усилия| E[Интеграция с Steam API]
+    A -->|Низкие усилия| F[Улучшение интерфейса]
 ```
 ## История разработки
 ```mermaid
