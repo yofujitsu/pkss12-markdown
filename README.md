@@ -29,18 +29,33 @@ mindmap
       API-интеграция
       Веб-интерфейс
       База данных
-journey
-  title Путешествие пользователя Deadlock Tracker
+sequenceDiagram
+    participant User as Пользователь
+    participant WebApp as ВебПриложение
+    participant API as API Сервер
+    participant Database as База данных
+    participant SteamAPI as Steam API
 
-  section Посещение сайта
-    Пользователь: Переходит на главную страницу: 5: Удобно
-  section Авторизация
-    Пользователь: Вводит данные Steam: 4: Ожидаемо
-    Система: Получает данные пользователя: 5: Быстро
-  section Работа со статистикой
-    Пользователь: Открывает статистику героя: 5: Информативно
-    Система: Запрашивает данные с API: 4: Быстро
-    Пользователь: Смотрит собственные данные: 5: Полезно
+    User ->> WebApp: Открывает платформу
+    WebApp ->> API: Авторизация через Steam
+    API ->> SteamAPI: Запрос данных пользователя
+    SteamAPI -->> API: Данные пользователя
+    API ->> Database: Сохранение данных
+    WebApp -->> User: Успешная авторизация
+
+    User ->> WebApp: Запрашивает статистику героя
+    WebApp ->> API: Получить данные героя
+    API ->> Database: Проверить данные
+    alt Данные в базе есть
+        Database -->> API: Вернуть данные
+    else Данных нет
+        API ->> SteamAPI: Запросить данные героя
+        SteamAPI -->> API: Вернуть данные
+        API ->> Database: Сохранить данные
+    end
+    API -->> WebApp: Данные героя
+    WebApp -->> User: Показать статистику
+
 quadrantChart
     title Приоритеты функционала Deadlock Tracker
     "Высокая ценность" : [Авторизация, Статистика игроков]
