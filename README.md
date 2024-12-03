@@ -30,10 +30,9 @@ mindmap
       Веб-интерфейс
         База данных
 ```
+## Путешествие пользователя Deadlock Tracker
 ```mermaid
 journey
-  title Путешествие пользователя Deadlock Tracker
-
   section Посещение сайта
     Пользователь: Переходит на главную страницу: 5: Удобно
   section Авторизация
@@ -43,4 +42,30 @@ journey
     Пользователь: Открывает статистику героя: 5: Информативно
     Система: Запрашивает данные с API: 4: Быстро
     Пользователь: Смотрит собственные данные: 5: Полезно
+```
+## Приоритеты функционала
+```mermaid
+quadrantChart
+    title Приоритеты функционала Deadlock Tracker
+    "Высокая ценность" : [Авторизация, Статистика игроков]
+    "Низкая ценность" : [Статистика предметов]
+    "Высокие усилия" : [Интеграция с Steam API]
+    "Низкие усилия" : [Улучшение интерфейса]
+```
+## История разработки
+```mermaid
+gitGraph
+    commit id: "Инициализация проекта"
+    branch feature/API
+    commit id: "Реализация взаимодействия с Steam API"
+    checkout main
+    merge feature/API
+    branch feature/Frontend
+    commit id: "Разработка интерфейса пользователя"
+    checkout main
+    merge feature/Frontend
+    branch feature/Database
+    commit id: "Настройка базы данных"
+    checkout main
+    merge feature/Database
 ```
