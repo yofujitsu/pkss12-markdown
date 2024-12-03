@@ -46,10 +46,11 @@ journey
 ## Приоритеты функционала
 ```mermaid
 quadrantChart
-    "Высокая ценность" : [Авторизация, Статистика игроков]
-    "Низкая ценность" : [Статистика предметов]
-    "Высокие усилия" : [Интеграция с Steam API]
-    "Низкие усилия" : [Улучшение интерфейса]
+    "High Value" : [Authorization, Player Statistics]
+    "Low Value" : [Item Statistics]
+    "High Effort" : [Steam API Integration]
+    "Low Effort" : [Interface Improvements]
+
 ```
 ## История разработки
 ```mermaid
