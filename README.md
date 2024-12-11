@@ -54,6 +54,9 @@ graph TD
 ```
 ## История разработки
 ```mermaid
+## Git Graph for Deadlock Statistics Tracker System
+
+```mermaid
 gitGraph
    commit id: "Initialize project"
    branch develop
@@ -71,34 +74,29 @@ gitGraph
    commit id: "Develop Frontend Authentication Module"
    checkout develop
    merge feature/frontend-auth id: "Merge Frontend Auth Module to develop"
-
    branch feature/stats-service
    checkout feature/stats-service
    commit id: "Implement StatsService"
    commit id: "Write Integration Tests for StatsService"
    checkout develop
    merge feature/stats-service id: "Merge StatsService to develop"
-
    branch feature/steam-service
    checkout feature/steam-service
    commit id: "Develop SteamService"
    commit id: "Integrate with External Steam API"
    checkout develop
    merge feature/steam-service id: "Merge SteamService to develop"
-
    branch feature/frontend-ui
    checkout feature/frontend-ui
    commit id: "Enhance Frontend UI (Responsive Design)"
    commit id: "Display User Stats on Frontend"
    checkout develop
    merge feature/frontend-ui id: "Merge Frontend UI enhancements to develop"
-
    branch feature/db-optimization
    checkout feature/db-optimization
    commit id: "Improve Database Schema for Performance"
    checkout develop
    merge feature/db-optimization id: "Merge DB optimization to develop"
-
    branch staging
    checkout staging
    commit id: "Deploy to Staging Environment"
@@ -114,5 +112,4 @@ gitGraph
    merge hotfix/fix-frontend-bug id: "Merge Hotfix to Main"
    checkout develop
    merge hotfix/fix-frontend-bug id: "Merge Hotfix to Develop"
-
 ```
