@@ -59,45 +59,64 @@ graph TD
 gitGraph
    commit id: "Initialize project"
    branch develop
+   checkout develop
    commit id: "Set up CI/CD pipeline"
    commit id: "Create API Gateway project"
 
-   branch feature-user-service
+   branch feature/user-service
+   checkout feature/user-service
    commit id: "Implement UserService"
    commit id: "Write Unit Tests for UserService"
-   merge develop id: "Merge UserService to develop"
+   checkout develop
+   merge feature/user-service id: "Merge UserService to develop"
 
-   branch feature-frontend-auth
+   branch feature/frontend-auth
+   checkout feature/frontend-auth
    commit id: "Develop Frontend Authentication Module"
-   merge develop id: "Merge Frontend Auth Module to develop"
+   checkout develop
+   merge feature/frontend-auth id: "Merge Frontend Auth Module to develop"
 
-   branch feature-stats-service
+   branch feature/stats-service
+   checkout feature/stats-service
    commit id: "Implement StatsService"
    commit id: "Write Integration Tests for StatsService"
-   merge develop id: "Merge StatsService to develop"
+   checkout develop
+   merge feature/stats-service id: "Merge StatsService to develop"
 
-   branch feature-steam-service
+   branch feature/steam-service
+   checkout feature/steam-service
    commit id: "Develop SteamService"
    commit id: "Integrate with External Steam API"
-   merge develop id: "Merge SteamService to develop"
+   checkout develop
+   merge feature/steam-service id: "Merge SteamService to develop"
 
-   branch feature-frontend-ui
+   branch feature/frontend-ui
+   checkout feature/frontend-ui
    commit id: "Enhance Frontend UI (Responsive Design)"
    commit id: "Display User Stats on Frontend"
-   merge develop id: "Merge Frontend UI enhancements to develop"
+   checkout develop
+   merge feature/frontend-ui id: "Merge Frontend UI enhancements to develop"
 
-   branch feature-db-optimization
+   branch feature/db-optimization
+   checkout feature/db-optimization
    commit id: "Improve Database Schema for Performance"
-   merge develop id: "Merge DB optimization to develop"
+   checkout develop
+   merge feature/db-optimization id: "Merge DB optimization to develop"
 
    branch staging
+   checkout staging
    commit id: "Deploy to Staging Environment"
    branch main
+   checkout main
    merge staging id: "Merge Staging to Main"
    commit id: "Release version 1.0"
 
-   branch hotfix-fix-frontend-bug
+   branch hotfix/fix-frontend-bug
+   checkout hotfix/fix-frontend-bug
    commit id: "Fix critical bug in frontend"
-   merge main id: "Merge Hotfix to Main"
-   merge develop id: "Merge Hotfix to Develop"
+   checkout main
+   merge hotfix/fix-frontend-bug id: "Merge Hotfix to Main"
+   checkout develop
+   merge hotfix/fix-frontend-bug id: "Merge Hotfix to Develop"
+
 ```
