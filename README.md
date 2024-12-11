@@ -53,6 +53,7 @@ graph TD
     A -->|Низкие усилия| F[Улучшение интерфейса]
 ```
 ## История разработки
+
 ## Git Graph for Deadlock Statistics Tracker System
 
 ```mermaid
@@ -63,60 +64,46 @@ gitGraph
    commit id: "Set up CI/CD pipeline"
    commit id: "Create API Gateway project"
 
+   branch feature/frontend
+   checkout feature/frontend
+   commit id: "Implement frontend UI"
+   commit id: "Add user authentication"
+   checkout develop
+   merge feature/frontend id: "Merge frontend to develop"
+
    branch feature/user-service
    checkout feature/user-service
-   commit id: "Implement UserService"
-   commit id: "Write Unit Tests for UserService"
+   commit id: "Develop UserService"
+   commit id: "Implement user authentication logic"
    checkout develop
    merge feature/user-service id: "Merge UserService to develop"
 
-   branch feature/frontend-auth
-   checkout feature/frontend-auth
-   commit id: "Develop Frontend Authentication Module"
-   checkout develop
-   merge feature/frontend-auth id: "Merge Frontend Auth Module to develop"
-
    branch feature/stats-service
    checkout feature/stats-service
-   commit id: "Implement StatsService"
-   commit id: "Write Integration Tests for StatsService"
+   commit id: "Develop StatsService"
+   commit id: "Add game stats processing"
    checkout develop
    merge feature/stats-service id: "Merge StatsService to develop"
 
    branch feature/steam-service
    checkout feature/steam-service
    commit id: "Develop SteamService"
-   commit id: "Integrate with External Steam API"
+   commit id: "Integrate with external Steam API"
    checkout develop
    merge feature/steam-service id: "Merge SteamService to develop"
 
-   branch feature/frontend-ui
-   checkout feature/frontend-ui
-   commit id: "Enhance Frontend UI (Responsive Design)"
-   commit id: "Display User Stats on Frontend"
+   branch feature/database
+   checkout feature/database
+   commit id: "Design database schema"
+   commit id: "Optimize queries for performance"
    checkout develop
-   merge feature/frontend-ui id: "Merge Frontend UI enhancements to develop"
-
-   branch feature/db-optimization
-   checkout feature/db-optimization
-   commit id: "Improve Database Schema for Performance"
-   checkout develop
-   merge feature/db-optimization id: "Merge DB optimization to develop"
+   merge feature/database id: "Merge database updates to develop"
 
    branch staging
    checkout staging
    commit id: "Deploy to Staging Environment"
    branch main
    checkout main
-   merge staging id: "Merge Staging to Main"
-   commit id: "Release version 1.0"
-
-   branch hotfix/fix-frontend-bug
-   checkout hotfix/fix-frontend-bug
-   commit id: "Fix critical bug in frontend"
-   checkout main
-   merge hotfix/fix-frontend-bug id: "Merge Hotfix to Main"
-   checkout develop
-   merge hotfix/fix-frontend-bug id: "Merge Hotfix to Develop"
+   merge staging id: "Release version 1.0
 
 ```
