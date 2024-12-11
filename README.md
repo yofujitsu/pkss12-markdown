@@ -55,8 +55,6 @@ graph TD
 ## История разработки
 ```mermaid
 ## Git Graph for Deadlock Statistics Tracker System
-
-```mermaid
 gitGraph
    commit id: "Initialize project"
    branch develop
