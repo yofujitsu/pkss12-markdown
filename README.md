@@ -53,6 +53,8 @@ graph TD
     A -->|Низкие усилия| F[Улучшение интерфейса]
 ```
 ## История разработки
+## Git Graph for Deadlock Statistics Tracker System
+
 ```mermaid
 gitGraph
    commit id: "Initialize project"
@@ -60,31 +62,31 @@ gitGraph
    commit id: "Set up CI/CD pipeline"
    commit id: "Create API Gateway project"
 
-   branch feature/user-service
+   branch feature-user-service
    commit id: "Implement UserService"
    commit id: "Write Unit Tests for UserService"
    merge develop id: "Merge UserService to develop"
 
-   branch feature/frontend-auth
+   branch feature-frontend-auth
    commit id: "Develop Frontend Authentication Module"
    merge develop id: "Merge Frontend Auth Module to develop"
 
-   branch feature/stats-service
+   branch feature-stats-service
    commit id: "Implement StatsService"
    commit id: "Write Integration Tests for StatsService"
    merge develop id: "Merge StatsService to develop"
 
-   branch feature/steam-service
+   branch feature-steam-service
    commit id: "Develop SteamService"
    commit id: "Integrate with External Steam API"
    merge develop id: "Merge SteamService to develop"
 
-   branch feature/frontend-ui
+   branch feature-frontend-ui
    commit id: "Enhance Frontend UI (Responsive Design)"
    commit id: "Display User Stats on Frontend"
    merge develop id: "Merge Frontend UI enhancements to develop"
 
-   branch feature/db-optimization
+   branch feature-db-optimization
    commit id: "Improve Database Schema for Performance"
    merge develop id: "Merge DB optimization to develop"
 
@@ -94,9 +96,8 @@ gitGraph
    merge staging id: "Merge Staging to Main"
    commit id: "Release version 1.0"
 
-   branch hotfix/fix-frontend-bug
+   branch hotfix-fix-frontend-bug
    commit id: "Fix critical bug in frontend"
    merge main id: "Merge Hotfix to Main"
    merge develop id: "Merge Hotfix to Develop"
-
 ```
